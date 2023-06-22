@@ -4,6 +4,7 @@ In this repository, you can find the modules, starter code, instructions, and de
 
 # Modules
 Module 0: Introduction to Raspberry Pi
+
 Module 1: HelloWorld & Blink
 Module 2: Water Temperature
 Module 3: Air Temperature & LCD
