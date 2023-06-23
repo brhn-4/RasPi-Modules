@@ -9,9 +9,9 @@ During this phase, we will be assembling our raspberry pi, setting up our OS or 
 [Raspberry Pi][rasPi] is a small single-board computer that is capable of doing everything you’d expect a desktop computer to do, from browsing the internet and playing high-definition video, to making spreadsheets, and even interpreting data from sensors interacting with the real world. For the remainder of this course, we will be focusing on interacting with sensors to gather and analyze data in hopes to create a water control system. Our first step in this process is to set up our raspberry pi and connect to it. 
 
 ## Assembling Raspberry Pi 
-
+<div height='300' width='300>
 ![Screenshot 2023-06-22 220834](https://github.com/brhn-4/INTAG-RasPi-Modules/assets/71796616/446f37a2-55ea-4c25-a471-6f16c2654e13)
-
+</div>
 ## Setting up the OS
 The WordNet is represented by two files which must each be formed as described below in order to be valid. A major part of this project will be to process and load from these supplied input files.
 
