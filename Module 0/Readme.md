@@ -1,21 +1,21 @@
-# Project 1: WordNet
+# Project 0: Raspberry Pi Introduction
 Due: September 10th (Late September 11th) at 11:59 PM
-Points: 35P/35R/30S
+Points: 
 
 ## Before You Start
-If you have not completed the installations required for this course, refer to the unofficial [Project 0](../project0). In order to do Project 1, you must have everything related to Ruby installed correctly (running the P0 public test will tell you if it is set up properly). If you have any troubles and/or concerns with installation, post on Piazza or come to office hours to talk to a TA.
+During this phase, we will be assembling our raspberry pi, setting up our OS or _Operating System_, and establishing an SSH connection to the raspberry pi. Assembling the computer and installing the proper software is crucial for success in further modules and ensuring everything is working properly. Therefore it is critical to follow the directions as closely as possible and ask questions when confused. 
 
 ## Introduction
-[WordNet][wordnet home] is a semantic lexicon for the English language that is used extensively by computational linguists and cognitive scientists. WordNet groups words into sets of synonyms called *synsets* and describes semantic relationships between them. Relevant to this project is the *is-a* relationship, which connects a *hyponym* (more specific synset) to a *hypernym* (more general synset). For example, a plant organ is a hypernym to plant root and plant root is a hypernym to carrot.
+[Raspberry Pi][rasPi] is a small single-board computer that is capable of doing everything you’d expect a desktop computer to do, from browsing the internet and playing high-definition video, to making spreadsheets, and even interpreting data from sensors interacting with the real world. For the remainder of this course, we will be focusing on interacting with sensors to gather and analyze data in hopes to create a water control system. Our first step in this process is to set up our raspberry pi and connect to it. 
 
-## Structure of WordNet Graph
-In order to perform operations on WordNet, you will construct your own representation of hypernym relationships using the provided graph implementation (in `graph.rb`). Each vertex `v` is a non-negative integer representing a synset id, and each directed edge `v->w` represents `w` as a hypernym of `v`. The graph is directed and acyclic (DAG), though not necessarily a tree since each synset can have several hypernyms. A small subset of the WordNet graph is illustrated below.
-![Sample WordNet Graph][sample graph]
+## Assembling Raspberry Pi 
 
-## Input File Formats
+![Screenshot 2023-06-22 220834](https://github.com/brhn-4/INTAG-RasPi-Modules/assets/71796616/446f37a2-55ea-4c25-a471-6f16c2654e13)
+
+## Setting up the OS
 The WordNet is represented by two files which must each be formed as described below in order to be valid. A major part of this project will be to process and load from these supplied input files.
 
-### Synsets File
+### Headless Setup
 The synsets file is a list of all of the synsets in WordNet (i.e. the vertices of the graph above). A synset is a list of nouns that share the same meaning. Each line of a valid synsets file consists of two fields:
 - **Synset id**: A non-negative integer identifying the synset.
 - **Synset**: A comma-delimited list of one or more nouns that belong to the synset. Nouns are made up of letters (uppercase and lowercase), numbers, underscores, dashes, periods, apostrophes, and forward slashes. These criteria will always define valid nouns wherever valid nouns are referenced in this document.
@@ -32,6 +32,7 @@ id: 60430 synset: password,watchword,word,parole,countersign
 The hypernyms file contains the hypernym relationships between synsets. Each line of a valid hypernyms file contains two fields:
 - **Synset id**: A non-negative integer identifying the synset these edges originate from.
 - **Hypernym ids**: A comma-delimited list of one or more non-negative integers representing synsets that edges will go to.
+![Screenshot 2023-06-22 220834](https://github.com/brhn-4/INTAG-RasPi-Modules/assets/71796616/446f37a2-55ea-4c25-a471-6f16c2654e13)
 
 Each line of the file represents a set of edges from a synset to its hypernyms. For example, the line
 ```
@@ -213,13 +214,5 @@ To submit the project go to the project folder in a terminal and run `java -jar 
 ## Academic Integrity
 Please **carefully read** the academic honesty section of the course syllabus. **Any evidence** of impermissible cooperation on projects, use of disallowed materials or resources, or unauthorized use of computer accounts, **will be** submitted to the Student Honor Council, which could result in an XF for the course, or suspension or expulsion from the University. Be sure you understand what you are and what you are not permitted to do in regards to academic integrity when it comes to project assignments. These policies apply to all students, and the Student Honor Council does not consider lack of knowledge of the policies to be a defense for violating them. Full information is found in the course syllabus, which you should review before starting.
 
-[wordnet home]: http://wordnet.princeton.edu/
-[cloning instructions]: ../git_cheatsheet.md
-[sample graph]: images/sample-graph.png
-[ancestry example]: images/ancestry-example.png
-[symbol documentation]: https://ruby-doc.org/core-2.3.0/Symbol.html
-[interactive example]: images/interactive-example.png
-[submit server]: submit.cs.umd.edu
-[web submit link]: images/web_submit.jpg
-[web upload example]: images/web_upload.jpg
+[rasPi]: https://www.raspberrypi.org/
 
