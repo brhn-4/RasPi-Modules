@@ -116,7 +116,9 @@ While it may be easy to find the ip address with a display connected it is a bit
 **Establishing the SSH Connection**
 
 Now that we have found the IP address of our pi, it's time to establish a connection via your desired method. Please note that to establish an SSH connection you may have to make changes to your computer's configuration. Below we linked documentation and guides to setting up an SSH connection. Your instructor should be familiar with this process and be able to help you do any configuration changes necessary.
-
+<br><Br>
+NOTE: The home user of your Pi, the password for that user, and the hostname were all set during the configuration. But if you have trouble and already have a way to access command prompt directly, you can run "whoami" to find the user, " sudo passwd 'user' " to find the user, and  "hostname - I" for the IP address
+<br><Br>
 *VsCode*: [Link Here][vssh]
  
 
