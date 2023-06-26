@@ -115,16 +115,14 @@ While it may be easy to find the ip address with a display connected it is a bit
 
 **Establishing the SSH Connection**
 
-Now that we have found the ip address of our pi, it's time to establish a connection via your desired method.
+Now that we have found the IP address of our pi, it's time to establish a connection via your desired method. Please note that to establish an SSH connection you may have to make changes to your computer's configuration. Below we linked documentation and guides to setting up an SSH connection. Your instructor should be familiar with this process and be able to help you do any configuration changes necessary.
 
-*VsCode*:
+*VsCode*: [Link Here][vssh]
+ 
 
-  - **Step 1**: Once you have installed Vscode
-
-*Putty*:
+*Putty*: [Link Here][pssh]
 
 
-tsts
 
 
 
@@ -136,3 +134,5 @@ tsts
 [imager]:https://www.raspberrypi.com/software/
 [vsc]: https://code.visualstudio.com/download
 [putty]: https://www.putty.org/
+[vssh]: https://code.visualstudio.com/docs/remote/ssh
+[pssh]: https://www.circuitbasics.com/use-putty-to-access-the-raspberry-pi-terminal-from-a-computer/
