@@ -10,6 +10,20 @@ Before starting this project, you should have completed Module 0. For this proje
 For this project, we will be writing our first two Python scripts, as well as our first basic circuit. The two scripts will be "HelloWorld" which is the first program every computer scientist runs. We will be using this to verify you have Python installed properly on your pi, that you can access and run files via SSH, and to review how to create and execute Python scripts through the command prompt. After that, we will create our first circuit with an LED light and write a script that turns it on and off i.e blink. 
 
 ## Installing Python
+<br><Br>
+Our first step will be installing Python on our machine. If you prefer to use a different language you will need to convert all starter code and the extensions to that language. You can install Python from the official website, through command prompt, and even the terminal within Vscode
+<br><Br>
+```
+  Ctrl+`  #Open terminal in Vscode
+
+  Now Run the following commands:
+
+ 'sudo apt update' #update your system's repository
+ 'sudo apt install python3' #install python 3
+ 'python3 --version' #check what version was installed, update if necessary
+ 'python3' #if this runs without error you will know you have installed python!
+ 'quit()' #this will kill the Python shell 
+```
 
 
 
