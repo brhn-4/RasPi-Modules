@@ -1,22 +1,17 @@
 
-# Project 0: Raspberry Pi Introduction
+# Project 1: Blink & Hello World
 Due: _________ at 11:59 PM <br>
 Points: __________
 
 ## Before You Start
-During this phase, we will be assembling our raspberry pi, setting up our OS or _Operating System_, and establishing an SSH connection to the raspberry pi. Assembling the computer and installing the proper software is crucial for success in further modules and ensuring everything is working properly. Therefore it is critical to follow the directions as closely as possible and ask questions when confused. 
+Before starting this project, you should have completed Module 0. For this project, we will assume you have completed module 0 and correctly set up your Pi OS as well as an SSH connection if you do not have a display/keyboard directly connected to the Pi. Additionally, you will need a base knowledge of Python (or your preferred language) and command prompt commands/Linux.
 
 ## Introduction
-[Raspberry Pi][rasPi] is a small single-board computer that is capable of doing everything you’d expect a desktop computer to do, from browsing the internet and playing high-definition video, to making spreadsheets, and even interpreting data from sensors interacting with the real world. For the remainder of this course, we will be focusing on interacting with sensors to gather and analyze data in hopes to create a water control system. Our first step in this process is to set up our raspberry pi and connect to it. 
+For this project, we will be writing our first two Python scripts, as well as our first basic circuit. The two scripts will be "HelloWorld" which is the first program every computer scientist runs. We will be using this to verify you have Python installed properly on your pi, that you can access and run files via SSH, and to review how to create and execute Python scripts through the command prompt. After that, we will create our first circuit with an LED light and write a script that turns it on and off i.e blink. 
 
-## Assembling The Raspberry Pi 
-<p align="center">
-<img  width=auto height='400' src='https://github.com/brhn-4/INTAG-RasPi-Modules/assets/71796616/446f37a2-55ea-4c25-a471-6f16c2654e13'>
-</p>
-Firstly, if you are taking your Pi out of the box there is some assembly required. If your Pi does not have all of its parts attached (i.e. Heat Sinks) you want to do that at this time. Additionally, if you have a case for your Pi and want to assemble that and install the Pi you should do that at this time. 
-<br><br>
+## Installing Python
 
-NOTE: While many cases are good for protecting the Pi from physical damage and storing the Pi, you will need a case that has an open top or easy access to the GPIO pins to complete most of the projects. If your case obstructs access to the pins, you can either discard the case during this project or leave the top off. 
+
 
 
 ## Setting up the OS
