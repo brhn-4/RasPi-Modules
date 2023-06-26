@@ -13,6 +13,7 @@ For this project, we will be writing our first two Python scripts, as well as ou
 <br><Br>
 Our first step will be installing Python on our machine. If you prefer to use a different language you will need to convert all starter code and the extensions to that language. You can install Python from the official website, through command prompt, and even the terminal within Vscode
 <br><Br>
+**Instructions**
 ```
   Ctrl+`  #Open terminal in Vscode
 
@@ -29,7 +30,9 @@ Our first step will be installing Python on our machine. If you prefer to use a 
 
 
 ## Hello World
-Now we are going to set up the Raspberry Pi operating system on our Pi. During these next few steps, we will be installing the entire operating system as well as configuring our Pi to support an SSH connection.<br><br> It is important to note that there are two different ways to set up our Pi. The first is the more straightforward 
+Now we are going to be writing our first Python script 'Hello World'. Inside this module, there is a file called "HelloWorld.py". We will try out 3 different exercises to review some Python skills. <br><br>
+For this exercise complete each of the three commented-out blocks one by one. Once you have finished one of them execute the file by running "python3 HelloWorld.py". Validate the output and then kill the script with "Ctrl+C". 
+
 
 ## Blink 
 
