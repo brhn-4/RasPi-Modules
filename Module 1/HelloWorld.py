@@ -34,21 +34,23 @@ def h3():
 
 
 def destroy():
-    print('Program Ending...')
+    
 
 
 if __name__ == '__main__':  ##Called on execution
     
-    try:     #Try calling main function 'blink'
-        print("executing h1...\n")
-        #sleep(.5)
-        #h1()
-        #sleep(3)
-        print('executing h2...\n')
-        #h2()
-        print('executing h3...\n')
-        #sleep(3)
-        #h3()
+    try:     #Try block calling main functions
+        # print('executing h1...\n')
+        # sleep(2)
+        # h1()
+        
+        # print('\nexecuting h2...\n')
+        # sleep(2)
+        # h2()
+        
+        # print('\nexecuting h3...\n')
+        # sleep(2)
+        # h3()
     except KeyboardInterrupt:  #kill script
         destroy()
     
