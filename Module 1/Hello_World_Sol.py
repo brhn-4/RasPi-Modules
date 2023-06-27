@@ -22,7 +22,7 @@ def h2():
 def h3():
     word = ['d','l','r','o','W',' ','o','l','l','e','H']
     n = len(word)
-    for i in range(n,-1,-1):
+    for i in range(n,0,-1):
         print(word[i-1])
         sleep(0.5)
 
@@ -31,19 +31,22 @@ def h3():
 
 
 def destroy():
-    print('Program ending...')
+
     quit()
 
 if __name__ == '__main__':  ##Called on execution
     
     try:     #Try calling main function 'blink'
         print('executing h1...\n')
+        sleep(2)
         h1()
-        sleep(3)
-        print('executing h2...\n')
+        
+        print('\nexecuting h2...\n')
+        sleep(2)
         h2()
-        sleep(3)
-        print('executing h3...\n')
+        
+        print('\nexecuting h3...\n')
+        sleep(2)
         h3()
     except KeyboardInterrupt:  #kill script
         destroy()
