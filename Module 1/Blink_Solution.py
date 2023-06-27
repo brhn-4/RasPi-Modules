@@ -38,6 +38,7 @@ def destroy():
 if __name__ == '__main__':  ##Called on execution
     print ('Program is starting ... ')
     try:     #Try calling main function 'blink'
-        fiveLongBlink()
+        #blink()
+        #fiveLongBlink()
     except KeyboardInterrupt:  #kill script
         destroy()
