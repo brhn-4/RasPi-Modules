@@ -45,6 +45,8 @@ For this project, we will be using the ds18b20 water temperature sensor with an 
 
 ## Software Configuration
 
+
+
 ## Python Script
 
 
