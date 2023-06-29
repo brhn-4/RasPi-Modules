@@ -45,6 +45,34 @@ For this project, we will be using the ds18b20 water temperature sensor with an 
 
 ## Software Configuration
 
+We’ll need to enable the One-Wire interface before the Pi can receive data from our sensor. Once you have the sensor fully connected, the pi powered on, and you are logged in follow these steps to enable the One-Wire interface:
+```
+1. In the Pi's terminal enter 'sudo nano /boot/config.txt', then add 'dtoverlay=w1-gpio' to the bottom of the file:
+
+    
+2. Exit the config file then reboot the Pi with 'sudo reboot'. This may take a few seconds
+
+3. Now, log in to your Pi again and in the terminal enter 'sudo modprobe w1-gpio'
+
+4. Then enter 'sudo modprobe w1-therm'
+
+5. cd to the directory '/sys/bus/w1/devices' 
+
+6. Now enter ls to list the devices:
+
+![module2 software config 1](https://github.com/brhn-4/INTAG-RasPi-Modules/assets/71796616/d72fd611-2438-475b-9489-de118c6347d6)
+
+In my case, 28-000006637696 w1_bus_master1 is displayed.
+
+7. Now enter cd 28-XXXXXXXXXXXX (with your own serial number)
+
+
+8. Now, enter 'cat w1_slave' this will show the raw data our temperature sensor is reading:
+
+![module2 software config 2](https://github.com/brhn-4/INTAG-RasPi-Modules/assets/71796616/64d555ea-77a9-4b53-9177-910d13f9c0f5)
+
+```
+
 
 
 ## Python Script
