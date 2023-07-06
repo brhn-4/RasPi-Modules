@@ -2,12 +2,12 @@ RPI Notes [Brandon Nguyen]
 
 Sections:
 
-**Remeber to sudo reboot during setup after changes**
+**Remember to sudo reboot during setup after changes**
 
 1. Building the Raspberry Pi
-2. SSH vs. Stand alone
+2. SSH vs. Standalone
 	2.1 SSH
-	2.2 Stand alone connections
+	2.2 Stand-alone connections
 3. Component Background
 	3.1 Wiring
 		- breadboard
@@ -31,8 +31,8 @@ Sections:
 	4.6 Install wiring.py, 
 	
 5. Blink Test and HelloWorld
-	-verify if python is installed and up to date
-	-verify connection between ssh terminal and pi
+	-verify if Python is installed and up to date
+	-verify the connection between ssh terminal and pi
 	-verify proper connections
 	-first exposure to wiring
 	
