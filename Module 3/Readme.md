@@ -60,7 +60,7 @@ NOTE: If you have any issues typing ' | ' in the previous command this could be 
 
 9. Now run 'sudo apt-get install python-smbus' and 'sudo apt-get install python3-smbus' to install Smbus
 ```
-**I2C Deteiction**
+**I2C Detection**
 <p align="center">
   <img src="https://github.com/brhn-4/INTAG-RasPi-Modules/assets/71796616/9bc39931-da31-4c94-9696-aab6f768fdc7" width="300" />
 </p>
