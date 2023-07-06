@@ -37,7 +37,8 @@ NOTE: Because, as stated earlier we only need 4 pins to control the 16 pins of t
 
 ## Software Configuration
 
-We’ll need to enable the I2C interface before we can begin interacting with our display. Once you have the LCD fully connected, the Pi powered on, and you are logged in follow these steps to enable the I2C interface:
+We’ll need to enable the I2C interface before we can begin interacting with our display. We also need to install Smbus and i2c-tools for our project which we will do during this phase. Once you have the LCD fully connected, the Pi powered on, and you are logged in follow these steps to enable the I2C interface and install the proper packages:
+
 ```
 1. Type 'sudo raspi-config', This should open up a configuration menu.
 
@@ -51,10 +52,18 @@ We’ll need to enable the I2C interface before we can begin interacting with ou
 
 6. You should see something like 'i2c_bcm2802 .........' if the instructions were run correctly
 
-NOTE: If you have any issues typing ' | ' in the previous command this could be because your Pi is set to a UK keyboard layout. In the config menu you can change this to the appropriate layout for whatever keyboard you are using
+NOTE: If you have any issues typing ' | ' in the previous command this could be because your Pi is set to a UK keyboard layout. In the config menu, you can change this to the appropriate layout for whatever keyboard you are using
 
+7. Next run 'sudo apt-get install i2c-tools', this will install I2C tools
 
+8. Now run 'i2cdetect -y 1', if everything is working properly you will detect a device and see something like the output shown below
+
+9. Now run 'sudo apt-get install python-smbus' and 'sudo apt-get install python3-smbus' to install Smbus
 ```
+**I2C Deteiction**
+<p align="center">
+  <img src="https://github.com/brhn-4/INTAG-RasPi-Modules/assets/71796616/9bc39931-da31-4c94-9696-aab6f768fdc7" width="300" />
+</p>
 
 
 
