@@ -1,1 +1,52 @@
+RPI Notes [Brandon Nguyen]
+
+Sections:
+
+**Remeber to sudo reboot during setup after changes**
+
+1. Building the Raspberry Pi
+2. SSH vs. Stand alone
+	2.1 SSH
+	2.2 Stand alone connections
+3. Component Background
+	3.1 Wiring
+		- breadboard
+		- GPIO numbering
+		- GND
+	3.2 Resistors
+	3.3 Diodes [LEDs]
+	3.4 Warnings	
+		- power off
+		- proper resistance
+		- heat
+		- proper connections
+4. Setup
+	4.1 Installing Python
+	4.2 VScode / Putty
+	4.3 Keyboard setup
+	4.4 I2C Enabling
+	4.5 Warnings
+		- keyboard may be incorrect
+		-i2c or one wire might be disabled
+	4.6 Install wiring.py, 
+	
+5. Blink Test and HelloWorld
+	-verify if python is installed and up to date
+	-verify connection between ssh terminal and pi
+	-verify proper connections
+	-first exposure to wiring
+	
+	
+6. Water Temp Sensor
+	-edit /boot/config.txt (dtoverlay=w1-gpio) then reboot
+	-sudo modprobe w1-gpio
+	-sudo modprobe w1-therm
+7. LCD
+	- need to enable i2c ("verify with lsmod | grep i2c" content should display if done correctly) *when keyboard issue arose*
+	- "sudo apt-get install i2c-tools" install i2c tools
+	- "i2cdetect -y 1" i2c device detection
+	- "sudo apt-get install python3-smbus" install smbus if not installed
+
+		
+		
 
