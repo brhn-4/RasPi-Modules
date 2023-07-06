@@ -37,31 +37,22 @@ NOTE: Because, as stated earlier we only need 4 pins to control the 16 pins of t
 
 ## Software Configuration
 
-We’ll need to enable the One-Wire interface before the Pi can receive data from our sensor. Once you have the sensor fully connected, the pi powered on, and you are logged in follow these steps to enable the One-Wire interface:
+We’ll need to enable the I2C interface before we can begin interacting with our display. Once you have the LCD fully connected, the Pi powered on, and you are logged in follow these steps to enable the I2C interface:
 ```
-1. In the Pi's terminal enter 'sudo nano /boot/config.txt', then add 'dtoverlay=w1-gpio' to the bottom of the file:
+1. Type 'sudo raspi-config', This should open up a configuration menu.
 
-    
-2. Exit the config file then reboot the Pi with 'sudo reboot'. This may take a few seconds
+2. Select 'Interfacing Options', Usually Option 5 
 
-3. Now, log in to your Pi again and in the terminal enter 'sudo modprobe w1-gpio'
+3. Select 'P5 I2C', then 'yes', and then 'finish'.   
 
-4. Then enter 'sudo modprobe w1-therm'
+4. Now restart your pi with 'sudo reboot'
 
-5. cd to the directory '/sys/bus/w1/devices' 
+5. You can now check whether or not it was installed by running 'lsmod | grep i2c'
 
-6. Now enter ls to list the devices:
+6. You should see something like 'i2c_bcm2802 .........' if the instructions were run correctly
 
-![module2 software config 1](https://github.com/brhn-4/INTAG-RasPi-Modules/assets/71796616/d72fd611-2438-475b-9489-de118c6347d6)
+NOTE: If you have any issues typing ' | ' in the previous command this could be because your Pi is set to a UK keyboard layout. In the config menu you can change this to the appropriate layout for whatever keyboard you are using
 
-In my case, 28-000006637696 w1_bus_master1 is displayed.
-
-7. Now enter cd 28-XXXXXXXXXXXX (with your own serial number)
-
-
-8. Now, enter 'cat w1_slave' this will show the raw data our temperature sensor is reading:
-
-![module2 software config 2](https://github.com/brhn-4/INTAG-RasPi-Modules/assets/71796616/64d555ea-77a9-4b53-9177-910d13f9c0f5)
 
 ```
 
