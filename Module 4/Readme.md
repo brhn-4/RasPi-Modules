@@ -23,19 +23,25 @@ For this project, we will be using another ds18b20 temperature sensor except wit
 
 ## Connecting the Sensor
 
+Now when we are connecting the sensor we will have to re-wire our water temperature to create one circuit with both of the sensors that we connect to the Pi. 
 
-<p align="center">
-  <img src="https://github.com/brhn-4/INTAG-RasPi-Modules/assets/71796616/8c6eab57-d3c9-43af-b147-baeaaf5cfbe7" width="300" />
-</p>
 
 - **Step 1**: First, like always you want to disconnect the power supply from your pi.
-- **Step 2**: Secondly, connect the GND (black) pin of the LCD to any of the GND pins in the pi or breadboard. NOTE: If you look on the top of your LCD there should be labeling to identify which pin is which, or refer to the schematic.
-- **Step 3**: Connect the VCC (red) to the 5v pin
-- **Step 4**: Connect the SDA (yellow) to the SDA GPIO pin (pin 3)
-- **Step 5**: Connect the SCL (blue) to the SCL GPIO pin (pin 5)
-- **Step 6**: Now that everything is connected we can re-connect our Pi to power, connect and begin writing our Python script
+- **Step 2**: Secondly, connect the GND (black) pins of both the sensors to the negative rail of your breadboard. 
+- **Step 3**: Now connect the VCC (red) pins to the positive rail of your breadboard.
+- **Step 4**: Connect the negative rail to the GND GPIO pin of your raspberry pi
+- **Step 5**: Connect the postitive rail to the 3.3V GPIO pin
+- **Step 6**: Connect all 3 Data pins to one column on the bread board
+- **Step 7**: Connect the postiive rail to a seperate column on the bread board
+- **Step 8**: Connect a 4.7k Ohm resistor in between the two columns
+- **Step 9**: Now connect a seperate wire after the resistor from the Data column to a generic GPIO
+- **Step 8**: Now that everything is connected we can power on our pi and begin coding!
 
+  NOTE: Refere to the diagram below for clarification. The diagram showcases 3 ds18b20 air temp sensors to show how to add more after the second sensor. Simply ignore the third sensor in the diagram. Additonally, there is no difference between the water and air temperature sensors when wiring.
 
+<p align="center">
+  <img src="https://github.com/brhn-4/INTAG-RasPi-Modules/assets/71796616/dc11e5aa-390a-4002-ba7b-10a9567da1cf" width="300" />
+</p>
 
 
 ## Software Configuration
