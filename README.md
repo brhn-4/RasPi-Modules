@@ -11,13 +11,13 @@ Module 1: HelloWorld & Blink
 
 Module 2: Water Temperature
 
-Module 3: Air Temperature & LCD
+Module 3: LCD
 
-Module 4: Humidity
+Module 4: Air Temperature
 
-Module 5: Water Flow 
+Module 5: Humidity
 
-Module 6: Photoresistor
+Module 6: Water Flow
 
 Module 7: WebIOT
 
