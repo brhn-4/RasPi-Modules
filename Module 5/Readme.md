@@ -9,8 +9,7 @@ For this project, we are going to be connecting a DHT11 Humidity Sensor to our r
 <br><br>
 This project will be split into two parts wiring the sensor to your Pi and then writing a Python script to read the input. Depending on the state of your Pi's repository you may need to update certain packages. If you run into any unexpected issues make sure to double check everything is up to date and that you have installed the new packages correctly.
 <br><br>
-**HARDWARE REQUIREMENTS**: 1x dht11 humidity sensor, Jumper wires
-
+**HARDWARE REQUIREMENTS**: 1x dht11 humidity sensor, Jumper wires, 10K Ohm Resistor (only for four pin module)
 
 <br><br>
 ## DHT11
@@ -28,20 +27,17 @@ Now when we are connecting the sensor we will have to re-wire our water temperat
 
 
 - **Step 1**: First, like always you want to disconnect the power supply from your pi.
-- **Step 2**: Secondly, connect the GND (black) pins of both the sensors to the negative rail of your breadboard. 
-- **Step 3**: Now connect the VCC (red) pins to the positive rail of your breadboard.
-- **Step 4**: Connect the negative rail to the GND GPIO pin of your raspberry pi
-- **Step 5**: Connect the postitive rail to the 3.3V GPIO pin
-- **Step 6**: Connect all 3 Data pins to one column on the bread board
-- **Step 7**: Connect the postiive rail to a seperate column on the bread board
-- **Step 8**: Connect a 4.7k Ohm resistor in between the two columns
-- **Step 9**: Now connect a seperate wire after the resistor from the Data column to a generic GPIO
-- **Step 8**: Now that everything is connected we can power on our pi and begin coding!
+- **Step 2**: You can plug the dht11 directly into part of the unpowered breadboard or an auxiliray board.  
+- **Step 3**: Connect the GND (black) pin to the GND GPIO pin of your Pi
+- **Step 4**: Connect the VCC (red) pin to the 5v GPIO of your Pi
+- **Step 5**: Connect the Signal (blue) pin to any generic GPIO of your Pi
+- **Step 6**: Now that everything is connected we can power on our pi and begin coding!
 
-  NOTE: Refere to the diagram below for clarification. The diagram showcases 3 ds18b20 air temp sensors to show how to add more after the second sensor. Simply ignore the third sensor in the diagram. Additonally, there is no difference between the water and air temperature sensors when wiring.
+  NOTE: Refere to the diagram below for clarification.
+
 
 <p align="center">
-  <img src="https://github.com/brhn-4/INTAG-RasPi-Modules/assets/71796616/dc11e5aa-390a-4002-ba7b-10a9567da1cf" width="300" />
+  <img src="https://github.com/brhn-4/INTAG-RasPi-Modules/assets/71796616/c42eaaaa-4ab4-4239-a1c6-69ce54dbcc29" width="300" />
 </p>
 
 
