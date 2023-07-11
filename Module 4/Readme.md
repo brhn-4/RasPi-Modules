@@ -54,6 +54,7 @@ After enabling the one-wire interface you should be able to cd to the /sys/bus/w
 
 
 ## Python Script
+For the project 4 script, you will need to read in the data from both the air and water temperature sesnor and display them to your lcd. Refer to the starter code for more details.
 
 
 
