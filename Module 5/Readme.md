@@ -23,9 +23,6 @@ For this project we will be using the DHT11 humidity sensor. There are two varia
 
 ## Connecting the Sensor
 
-Now when we are connecting the sensor we will have to re-wire our water temperature to create one circuit with both of the sensors that we connect to the Pi. 
-
-
 - **Step 1**: First, like always you want to disconnect the power supply from your pi.
 - **Step 2**: You can plug the dht11 directly into part of the unpowered breadboard or an auxiliray board.  
 - **Step 3**: Connect the GND (black) pin to the GND GPIO pin of your Pi
@@ -33,7 +30,7 @@ Now when we are connecting the sensor we will have to re-wire our water temperat
 - **Step 5**: Connect the Signal (blue) pin to any generic GPIO of your Pi
 - **Step 6**: Now that everything is connected we can power on our pi and begin coding!
 
-  NOTE: Refere to the diagram below for clarification.
+  NOTE: Refer to the diagram below for clarification.
 
 
 <p align="center">
@@ -43,15 +40,15 @@ Now when we are connecting the sensor we will have to re-wire our water temperat
 
 ## Software Configuration
 
-We’ll need to enable the One-Wire interface before the Pi can receive data from our sensor if you didn't already in module 2. Once you have the sensor fully connected, the pi powered on, and you are logged in follow the steps in module 2 to enable the one-wire interface.
-<br><br>
-After enabling the one-wire interface you should be able to cd to the /sys/bus/w1/devices directory and see both of your sensors if every step was followed correctly. After you validate both of the sensors are visibile (2 id numbers in the directory), you can check the readings with  
- - cd 28-xxxxxx
- - cat w1_slave
-
+For this project we will be using the Adafruit Python library to help streamline our python script. The library is already included within the starter code files but if you would like to update it you can download the updated library using git. Now to finish installing the proper packages run the following commands
+`````````
+ cd Adafruit_Python_DHT
+ sudo apt-get install build-essential python-dev
+ sudo python setup.py install
+`````````
 
 ## Python Script
-For the project 4 script, you will need to read in the data from both the air and water temperature sesnor and display them to your lcd. Refer to the starter code for more details.
+For the Project 5 script, you will need to read in the humidity from your DHT11 sensor and output it to your LCD. We will be combining the work done in module 4 so that our LCD rotates between displaying water and air temperature to humidity every 3 seconds. Refer to the starter code for more details.
 
 
 
