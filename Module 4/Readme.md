@@ -1,5 +1,5 @@
 
-# Project 4: Air Temp
+# Project 4: Air Temperature
 Due: _________ at 11:59 PM <br>
 Points: __________
 
