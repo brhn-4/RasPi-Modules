@@ -7,16 +7,13 @@
 ########################################################################
 
 from PCF8574 import PCF8574_GPIO
-import Adafruit_DHT
 from Adafruit_LCD1602 import Adafruit_CharLCD
 from time import sleep, strftime
 from datetime import datetime
 import os
 
-DHT_SENSOR = Adafruit_DHT.DHT11
-DHT_PIN = 21
 
-#   Author note: please note that the sensor and read method are constructed to be able to handle multiple sensors which will be implemented late. Hence, they do some 
+#   Author note: please note that the sensor and read method are constructed to be able to handle multiple sensors which will be implemented later. Hence, they do some 
 #                unnecessary work. The sensor method loops through the directory and appends every sensor serial number and returns it in ret. For this module however,
 #                it is unnecessary. Additionally, read has a loop that loops through each sensor returned by read. This solution is hard coded in it's output to only return 
 #                the water temperature. The student's solution will not need these loops and should simply read the serial number from sensor() and convert the raw data in read()
@@ -42,6 +39,7 @@ def read(ds18b20):
         farenheit = (celsius * 1.8) + 32
         data.append(celsius)
         data.append(farenheit)
+    print(data)
     return data
     
 def loop(ds18b20):  ###### HARD CODED FOR ONE SENSOR: WATER TEMP #######
@@ -54,8 +52,8 @@ def loop(ds18b20):  ###### HARD CODED FOR ONE SENSOR: WATER TEMP #######
         lcd.setCursor(0,0)  # set cursor position
 
         if read(ds18b20) != None: #null check
-            lcd.message ("Temp: %0.3f C" % read(ds18b20)[0] +'\n') 
-            lcd.message ("Temp: %0.3f F" % read(ds18b20)[1] +'\n') 
+            lcd.message ("Temp: %0.3f C" % read(ds18b20)[2] +'\n') 
+            lcd.message ("Temp: %0.3f F" % read(ds18b20)[3] +'\n') 
 
           
             
