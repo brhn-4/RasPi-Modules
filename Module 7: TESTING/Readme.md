@@ -8,47 +8,48 @@ If you have completed the previous modules and continued on to this one you are 
 <br><br>
 Now that we have a way to read in data from all of our sensors we are going to be doing 3 main tasks. Designing an HTML/CSS/Js web server, sending data from the raspberry pi over the internet to this web server, and finally interpreting the data dynamically on our web server
 <br><br>
-Accomplishing these three tasks could take a long time so we will again be splitting it up into modules. In this module, we will show you how to set up your own webserver and give you an outline of what you will need when designing it with HTML/CSS/Js.
+Accomplishing these three tasks could take a long time so we will again be splitting it up into modules. In this module, we will show you how to set up your own web server and give you an outline of what you will need when designing it with HTML/CSS/Js.
 
 <br><br>
 ## Web Server
-
-
-
-
-
-## Connecting the Sensor
-
-- **Step 1**: First, like always you want to disconnect the power supply from your pi.
-- **Step 2**: You can plug the dht11 directly into part of the unpowered breadboard or an auxiliray board.  
-- **Step 3**: Connect the GND (black) pin to the GND GPIO pin of your Pi
-- **Step 4**: Connect the VCC (red) pin to the 5v GPIO of your Pi
-- **Step 5**: Connect the Signal (blue) pin to any generic GPIO of your Pi
-- **Step 6**: Now that everything is connected we can power on our pi and begin coding!
-
-  NOTE: Refer to the diagram below for clarification.
-
-
-<p align="center">
-  <img src="https://github.com/brhn-4/INTAG-RasPi-Modules/assets/71796616/c42eaaaa-4ab4-4239-a1c6-69ce54dbcc29" width="300" />
-</p>
-
-
-## Software Configuration
-
-For this project we will be using the Adafruit Python library to help streamline our python script. The library is already included within the starter code files but if you would like to update it you can download the updated library using git. Now to finish installing the proper packages run the following commands
+Our first goal is to set up a web server with our raspberry pi. This will allow us to create a page that any device on the same wifi will be able to access. This can be done very easily by using Apache2. Follow the steps below to set up the web server.
+<br>
 `````````
- cd Adafruit_Python_DHT
- sudo apt-get install build-essential python-dev
- sudo python setup.py install
+ sudo apt update
+ sudo apt install apache2 -y
+ sudo apt install php libapache2-mod-php -y
+
+ **Now we have the proper packages installed for our server we need to change the ownership**
+
+cd /var/www/html    -you should see index.html in this directory
+ls -al              -here you can see 'root' owns index.html
+sudo chown [user]: index.html    -add your user to the command to change the ownership
 `````````
 
-## Python Script
-For the Project 5 script, you will need to read in the humidity from your DHT11 sensor and output it to your LCD. We will be combining the work done in module 4 so that our LCD rotates between displaying water and air temperature to humidity every 3 seconds. Refer to the starter code for more details.
+<br><br>
+
+After finishing those commands it's time to test out our webserver. On your personal device try typing your pi's ip address i.e. 10.0.0.51. If your webserver was set up correctly this should pull up the apache2 home page on any of your devices. 
 
 
 
 
+
+
+## Designing a Web Page
+
+Now that we have established our web server. It's time to design it! While there are many ways to design pages for the rest of the project we will be referring to HTML/CSS/Js. We strongly recommend the use of those languages for compatibility with the provided starter code. <br><br>
+
+Html, CSS, and js aren't exactly programming languages on their own but instead, all weave together to create a web page. Html refers to the physical elements and DOM (Document Object Model) of the page, you can think of this as what creates the boxes, images, links, and text on a page. CSS is a styling component that allows you to change colors, fonts, sizes, positioning, or other things like that. Js or javascript handles the functionality of the page, this refers to things like buttons, functions, searches, and any other functionality within the page. <br><br>
+
+There are many ways to weave these together beautifully to create amazing web pages. While getting familiar with these languages we have two recommendations. Firstly, using external js and CSS. External js/CSS means keeping all of your js and CSS in separate files, then all you need to do is add one line of code at the top of your HTML page to link it. This drastically helps clean up your code and keep things organized. Secondly, we recommend using Bootstrap. Bootstrap is a module that contains lots of built-in HTML/CSS/js to make your life easier. You can link multiple style or js pages in your HTML document and to use Bootstrap all you have to do is link it as well. Below we have provided a few helpful links to help you get started.
+<br><br>
+
+## Helpful Resources
+
+- https://www.w3schools.com/html/
+- https://www.w3schools.com/css/
+- https://www.w3schools.com/js/
+- https://getbootstrap.com/
 
 
 
