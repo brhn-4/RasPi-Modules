@@ -58,7 +58,7 @@ Now it's time to implement our web page on the web server we established. This i
 <br><br>
 Your end task for this web page will be a page that reads in the data from our sensors updates the webpage with the current data every X minutes and alerts the users whether or not the data is within the given parameters. For this module, we will simply be designing the page. The next two modules will handle fetching the data and interpreting it.
 <br><br>
-In the starter code, you have 3 files: home.html, style.css, and funcs.js. It is up to you whether or not you use internal, external, or in-line js/css but the files are there and linked for your convenience. 
+In the starter code, you have 3 files: index.html, style.css, and funcs.js. It is up to you whether or not you use internal, external, or in-line js/css but the files are there and linked for your convenience. 
 <br><br>
 
 For this portion of the assignment, your tasks are as follows:
