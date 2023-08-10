@@ -11,7 +11,7 @@ Now that we have created our web page framework, it's time to read in the data f
 Now we are going to read in our data using Flask and AJAX. Flask is a lightweight and micro web framework for Python, enabling developers to easily create web applications by providing the necessary tools and libraries for handling HTTP requests and rendering templates. AJAX (Asynchronous JavaScript and XML) is a technique used in web development that allows a web page to communicate with the server asynchronously, without refreshing the whole page, leading to a more dynamic and responsive user experience. In a Flask application, AJAX can be implemented using JavaScript to make asynchronous requests to the server, sending or retrieving data in the background. Flask handles these AJAX requests on the server side by defining specific routes or endpoints that process the incoming data, execute logic, and return a response, typically in JSON format. Together, Flask and AJAX enable the creation of modern and interactive web applications, with Flask taking care of the server-side logic and AJAX handling seamless client-server communication. By using Flask with AJAX, developers can build applications that provide users with immediate feedback, creating a more engaging and user-friendly interface.
 <br><br>
 
-# Software Configuration:
+### Software Configuration:
 To install Flask run:
 `````````
 sudo apt update
