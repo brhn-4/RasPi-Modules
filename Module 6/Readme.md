@@ -1,4 +1,4 @@
-# Project 7: Web IOT
+# Project 6: Web IOT
 Due: _________ at 11:59 PM <br>
 Points: __________
 
