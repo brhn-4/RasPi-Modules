@@ -44,7 +44,7 @@ Html, CSS, and js aren't exactly programming languages on their own but instead,
 There are many ways to weave these together beautifully to create amazing web pages. While getting familiar with these languages we have two recommendations. Firstly, using external js and CSS. External js/CSS means keeping all of your js and CSS in separate files, then all you need to do is add one line of code at the top of your HTML page to link it. This drastically helps clean up your code and keep things organized. Secondly, we recommend using Bootstrap. Bootstrap is a module that contains lots of built-in HTML/CSS/js to make your life easier. You can link multiple style or js pages in your HTML document and to use Bootstrap all you have to do is link it as well. Below we have provided a few helpful links to help you get started.
 <br><br>
 
-# Helpful Resources
+## Helpful Resources
 After taking a look at these resources you will start designing the webpage
 
 - https://www.w3schools.com/html/
