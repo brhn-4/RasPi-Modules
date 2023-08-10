@@ -1,5 +1,5 @@
 
-# Project 8: Display Sensor Data
+# Project 8: Interpret Sensor Data
 Due: _________ at 11:59 PM <br>
 Points: __________
 
