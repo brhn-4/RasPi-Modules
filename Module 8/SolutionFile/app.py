@@ -1,3 +1,12 @@
+########################################################################
+# Filename    : app.py
+# Description : sensor fetch function. pass in data to DOM in index.html
+# Author      : brhn
+# modification: 8/11/2023
+########################################################################
+
+
+
 from flask import Flask, jsonify
 from flask_cors import CORS
 import Adafruit_DHT
