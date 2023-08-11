@@ -1,0 +1,63 @@
+/* 
+########################################################################
+# Filename    : index.css
+# Description : style for index.html
+# Author      : brhn
+# modification: 8/10/2023
+########################################################################
+ */
+
+
+
+
+.navbar {
+    background-color: lightgreen;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    z-index:999999
+}
+
+.navbar h1 {
+    margin: 0;
+}
+
+.clock {
+    font-size: 1.2em;
+}
+
+.jumbotron-container {
+    margin-top: 150px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;  
+    justify-content: space-between;
+}
+
+.jumbotron {
+    width: 40%;  /* to provide some space between the two jumbotrons */
+}
+
+.box {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+.box h4 {
+    font-size: 14px; /* Adjust as needed */
+}
+
+#airTemperature, #waterTemperature, #humidity {
+    font-size: 10px; /* Adjust this value based on how small you want the output to appear */
+}
+.iparam{
+    font-size: 10px;
+}
