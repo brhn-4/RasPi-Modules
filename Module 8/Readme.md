@@ -5,7 +5,7 @@ Points: __________
 
 
 ## Introduction:
-Now we're going to be working on the final part of the project! So far we have successfully set up multiple sensors, created a web server, and read in that data to dynamically update our web page. Now we have to interpret that data. We're going to be using javascript to implement the functions we need as well as add a few elements to our DOM
+Now we're going to be working on the final part of the web project! So far we have successfully set up multiple sensors, created a web server, and read in that data to dynamically update our web page. Now we have to interpret that data. We're going to be using javascript to implement the functions we need as well as add a few elements to our DOM
 
 <br><br>
 
