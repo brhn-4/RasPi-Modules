@@ -17,7 +17,14 @@ Module 4: Air Temperature
 
 Module 5: Humidity
 
-Module 6: Water Flow
+Module 6: Web IOT
 
-Module 7: WebIOT
+Module 7: Display Sensor Data
+
+Module 8: Interpret Sensor Data
+
+Module 9: Cloud DB (TO BE IMPLEMENTED)
+
+Module 10: AI (TO BE IMPLEMENTED)
+
 
