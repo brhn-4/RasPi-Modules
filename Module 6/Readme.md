@@ -58,7 +58,7 @@ Now it's time to implement our web page on the web server we established. This i
 <br><br>
 Your end task for this web page will be a page that reads in the data from our sensors updates the webpage with the current data every X minutes and alerts the users whether or not the data is within the given parameters. For this module, we will simply be designing the page. The next two modules will handle fetching the data and interpreting it.
 <br><br>
-In the starter code, you have 4 files: index.html, style.css, app.py, and funcs.js. For this module you will not be using app.py. Additionally, it is up to you whether or not you use internal, external, or in-line js/css but the files are there and linked for your convenience. 
+In the starter code, you have 4 files: index.html, style.css, app.py, and funcs.js. For this module, you will not be using app.py. Additionally, it is up to you whether or not you use internal, external, or in-line js/css but the files are there and linked for your convenience. 
 <br><br>
 
 For this portion of the assignment, your tasks are as follows:
@@ -66,8 +66,10 @@ For this portion of the assignment, your tasks are as follows:
 1. Create a floating top banner (nav bar)
 2. Implement a live clock (that reads from your pc) in the top banner
 3. One main element that will have sections for each sensor labeled and a title reading: 'Latest Update'
-4. A second main div with identical labels but titled: 'Ideal Parameter' and underneath the labels for each sensor the ideal range for the data
+4. A second main div with identical labels but titled: 'Ideal Parameters' and underneath the labels for each sensor the ideal range for the data
 
+Hint: If you need clarification on the tasks attached below is an image of the final product you will be implementing over the next few modules. 
+Note: There are a few components in the below image that you are not required to implement in this module but are introduced in Module 7 and Module 8. For this module simply follow the tasks assigned.
 
 
 
