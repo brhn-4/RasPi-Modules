@@ -12,6 +12,9 @@ For this project, we will be writing our first two Python scripts, as well as ou
 ## Installing Python
 
 Our first step will be installing Python on our machine. If you prefer to use a different language you will need to convert all starter code and the extensions to that language. You can install Python from the official website, through the command prompt, and even the terminal within Vscode
+<br><br>
+
+NOTE: For the remainder of the module we will refer to many Linux commands executed on the Raspberry Pi through our SSH connection. You can access Linux in many ways including VsCode. If you are not using Linux make sure to find similar commands online
 <br><Br>
 **Instructions**
 ```
