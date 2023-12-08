@@ -91,10 +91,51 @@ NOTE: You can find template connection strings for your database under the overv
   conn = pyodbc.connect(conn_str)
   cursor = conn.cursor()
 
-   # Close cursor and connection
+  # Close cursor and connection
   cursor.close()
   conn.close()
   ```
+<br>
+
+### Querying the Database
+By now our database should be created, configured our system to support the proper packages and included the necessary drivers to connect to the database, and established a connection within our Python application. Now it is time to query the database from our API.
+<br><br>
+In order to update our databse each time our webserver sends a GET request we must add our connection within the get function in app.py. Additionally, we want to make sure we are not entering null values into our database. Your query may look something like this:
+```
+def get_data(): #get fcn
+    ds18b20 = sensor() #call sensor fcn from earlier module to read in water and air temps
+    temperatures = read(ds18b20)
+    humidity, _ = Adafruit_DHT.read(DHT_SENSOR, DHT_PIN) #call sensor fcn from earlier module to read in humidity
+
+    #DATABASE CONNECTION AND QUERY
+
+    if None not in temperatures and humidity is not None: #NULL CHECK
+        # Establish a new database connection for each request
+        conn = pyodbc.connect(conn_str)
+        cursor = conn.cursor()
+
+        # Insert data into database
+        insert_query = '''INSERT INTO SensorReadings (AirTemperature, WaterTemperature, Humidity) VALUES (?, ?, ?);'''
+        cursor.execute(insert_query, temperatures[0], temperatures[1], humidity)
+        conn.commit()
+
+        # Close cursor and connection
+        cursor.close()
+        conn.close()
+
+    return jsonify({ #return json obj
+        'air_temperature':'%0.2f F' % temperatures[0],
+        'water_temperature': '%0.2f F' % temperatures[1],
+        'humidity': '%0.2f ' % humidity + '%'
+    })
+```
+
+### Verify Results
+Now we're all done! After implementing the above code and configuration your api should connect to the database with each request, validate the sensor readings, insert them into the database, and close the connection. It is generally good practice to open and close the connection with each request but you could also open it at the start of the application and close it in the kill command. However, ensure that the connection is properly opened and closed each time you run your application.
+<br><br>
+We can verify our results and view the data in the Azure portal. If you navigate back to the query editor in your SQL database, you can run the following query to see your data: SELECT * FROM {tablename}
+<br><br>
+If you see all your sensor readings here without any null values you will know you were successful.
   
 
 
