@@ -1,0 +1,295 @@
+<!-- 
+########################################################################
+# Filename    : index.html
+# Description : html web page with flask and ajax to dynamically update
+                page with sensor data and update user on any breaches
+                of ideal paramaters and connection to SQL database
+# Author      : brhn
+# modification: 12/7/2023
+########################################################################
+ -->
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  <!-- link ajax -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> <!-- link bootstrap !-->
+    <link rel = 'stylesheet' href="/index.css"> <!-- link css!-->
+    <title>INTAG RasPi Web Server</title>  <!-- title !-->
+</head>
+<body>
+  <div class="navbar">   <!-- navbar class for css !-->
+    <h1>INTAG Systems</h1>
+    <div class ='clock' id="liveClock">00:00</div>
+    <div id="lastUpdate" style="position: absolute; left: 10px; top: 10px;">  <!-- clock with id for js!-->
+        Last Update at: <span id="updateTime">00:00:00</span>  <!-- last update elem !-->
+    </div>
+</div>
+
+<div class="container jumbotron-container">  <!-- jumbotron container for  css !-->
+
+    <div class="jumbotron">
+        <h2 style="text-align:center"><u>Ideal Parameters</u></h2>
+        <div class="row">
+            <div class="col-sm box">
+                <h4>Water Temperature</h4>
+                <div class ="param-container">
+                    <div class="button-container">
+                        <button class="adjust-btn" onclick="adjustValue('.iparam.watertemperature', 1,'lower')">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                                <!-- Up arrow SVG code -->
+                                <path d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3V480c0 17.7 14.3 32 32 32s32-14.3 32-32V109.3l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128z"/>
+                            </svg>
+                        </button>
+                        <button class="adjust-btn" onclick="adjustValue('.iparam.watertemperature', -1,'lower')">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                                <!-- Down arrow SVG code -->
+                                <path d="M169.4 502.6c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 402.7 224 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 370.7L86.6 329.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128z"/>
+                            </svg>
+                        </button>
+                        
+                    </div>
+
+                    <div class='iparam watertemperature'>70F - 85F</div>
+                    <div class="button-container">
+                        <button class="adjust-btn" onclick="adjustValue('.iparam.watertemperature', 1,'upper')">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                                <!-- Up arrow SVG code -->
+                                <path d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3V480c0 17.7 14.3 32 32 32s32-14.3 32-32V109.3l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128z"/>
+                            </svg>
+                        </button>
+                        <button class="adjust-btn" onclick="adjustValue('.iparam.watertemperature', -1,'upper')">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                                <!-- Down arrow SVG code -->
+                                <path d="M169.4 502.6c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 402.7 224 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 370.7L86.6 329.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128z"/>
+                            </svg>
+                        </button>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class = 'row'>
+            <div class="col-sm box">
+                <h4>Air Temperature</h4>
+                <div class ="param-container">
+                    <div class="button-container">
+                        <button class="adjust-btn" onclick="adjustValue('.iparam.airtemperature', 1,'lower')">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                                <!-- Up arrow SVG code -->
+                                <path d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3V480c0 17.7 14.3 32 32 32s32-14.3 32-32V109.3l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128z"/>
+                            </svg>
+                        </button>
+                        <button class="adjust-btn" onclick="adjustValue('.iparam.airtemperature', -1,'lower')">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                                <!-- Down arrow SVG code -->
+                                <path d="M169.4 502.6c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 402.7 224 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 370.7L86.6 329.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128z"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class ='iparam airtemperature'>70F - 85F</div>
+                    
+                    <div class="button-container">
+                        <button class="adjust-btn" onclick="adjustValue('.iparam.airtemperature', 1,'upper')">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                                <!-- Up arrow SVG code -->
+                                <path d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3V480c0 17.7 14.3 32 32 32s32-14.3 32-32V109.3l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128z"/>
+                            </svg>
+                        </button>
+                        <button class="adjust-btn" onclick="adjustValue('.iparam.airtemperature', -1,'upper')">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                                <!-- Down arrow SVG code -->
+                                <path d="M169.4 502.6c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 402.7 224 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 370.7L86.6 329.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-sm box">
+                <h4>Humidity</h4>
+                <div class ="param-container">
+                    <div class="button-container">
+                        <button class="adjust-btn" onclick="adjustValue('.iparam.humidity', 1,'lower')">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                                <!-- Up arrow SVG code -->
+                                <path d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3V480c0 17.7 14.3 32 32 32s32-14.3 32-32V109.3l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128z"/>
+                            </svg>
+                        </button>
+                        <button class="adjust-btn" onclick="adjustValue('.iparam.humidity', -1,'lower')">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                                <!-- Down arrow SVG code -->
+                                <path d="M169.4 502.6c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 402.7 224 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 370.7L86.6 329.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128z"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class ='iparam humidity'>45% - 60%</div>
+
+                    <div class="button-container">
+                        <button class="adjust-btn" onclick="adjustValue('.iparam.humidity', 1,'upper')">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                                <!-- Up arrow SVG code -->
+                                <path d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3V480c0 17.7 14.3 32 32 32s32-14.3 32-32V109.3l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128z"/>
+                            </svg>
+                        </button>
+                        <button class="adjust-btn" onclick="adjustValue('.iparam.humidity', -1,'upper')">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                                <!-- Down arrow SVG code -->
+                                <path d="M169.4 502.6c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 402.7 224 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 370.7L86.6 329.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron">
+        <h2 style="text-align:center"><u>Last Reading</u></h2>
+        <div class="row">
+            <div class="col-sm box">
+                <h4>Water Temperature</h4>
+                <div id = 'waterTemperature'></div>
+            </div>
+        </div>
+
+        <div class = 'row'>
+            <div class="col-sm box">
+                <h4>Air Temperature</h4>
+                <div id='airTemperature'></div>
+            </div>
+        </div>
+            
+        
+        <div class="row">
+            <div class="col-sm box">
+                <h4>Humidity</h4>
+                <div id = 'humidity'></div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+ 
+
+
+
+
+<script>
+    
+function fetchData() {  //fetch sensor data fcn 
+    $.ajax({
+        url: 'http://10.0.0.51:5000/get_data', //url for viewing server 
+        type: 'GET',
+        success: function(response) { //if success push these results from json obj 'response'
+            updateDOM('#airTemperature', response.air_temperature, "Air Temperature", 70, 85);  //update DOM elems
+            updateDOM('#waterTemperature', response.water_temperature, "Water Temperature", 70, 85);
+            updateDOM('#humidity', response.humidity, "Humidity", 45, 60);
+
+               // Update the timestamp on data fetch
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            // Format time as 2-digit values, prepending with 0 if necessary
+            hours = ("0" + hours).slice(-2);
+            minutes = ("0" + minutes).slice(-2);
+            seconds = ("0" + seconds).slice(-2);
+
+            $('#updateTime').text(hours + ":" + minutes + ":" + seconds);
+ 
+        },
+        error: function(error) { //error catch
+            console.log(error);
+        }
+    });
+}
+fetchData(); //call fetch fcn
+setInterval(fetchData, 5000); // Refresh data every 5 seconds
+
+
+let parameterState = {
+    'airTemperature': true,  // true implies it's in-bounds, false means out-of-bounds
+    'waterTemperature': true,
+    'humidity': true
+};
+
+function getParameterBounds(selector) {
+    const currentVal = $(selector).text().split(' - ');
+    //console.log('this is me ' + selector)
+    return [parseFloat(currentVal[0]), parseFloat(currentVal[1])];
+}
+
+function updateDOM(elementId, valueString, name) { //update dom for out-of-bounds
+    let value = parseFloat(valueString.split(' ')[0]);
+    $(elementId).text(name + ": " + valueString);
+
+    let [lowerBound, upperBound] = getParameterBounds(`.iparam.${elementId.split('#')[1].toLowerCase()}`);
+    let isWithinBounds = value >= lowerBound && value <= upperBound;
+    //console.log('im here')
+    console.log(value + ' ' + lowerBound + ' ' + upperBound)
+    if (!isWithinBounds) { //out-of-bounds
+        console.log('over here')
+        $(elementId).css('color', 'red');
+        if (parameterState[name]) {
+            alert(`${name} is out of bounds! Value: ${value}`);
+            parameterState[name] = false;  // Update state to out-of-bounds
+        }
+    } else { //in-bounds
+       // console.log('here')
+        $(elementId).css('color', 'black');
+        parameterState[name] = true;  // Update state to in-bounds
+    }
+}
+
+function adjustValue(selector, adjustment, boundType) {
+    const currentVal = $(selector).text().split(' - ');
+    let unit = "F";  // Default unit
+
+    if (selector.includes('.humidity')) {
+        unit = "%";  // If it's humidity, change the unit to percentage
+    }
+
+    if (boundType === 'lower') {
+        // Adjust the lower bound based on adjustment
+        currentVal[0] = (parseInt(currentVal[0]) + adjustment) + unit;
+    } else if (boundType === 'upper') {
+        // Adjust the upper bound based on adjustment
+        currentVal[1] = (parseInt(currentVal[1]) + adjustment) + unit;
+    }
+
+    $(selector).text(currentVal.join(' - '));
+}
+
+
+function updateClock(){ //clock fcn
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+
+    // Format time as 2-digit values, prepending with 0 if necessary
+    hours = ("0" + hours).slice(-2);
+    minutes = ("0" + minutes).slice(-2);
+    seconds = ("0" + seconds).slice(-2);
+
+    document.getElementById('liveClock').innerHTML = hours + ":" + minutes + ":" + seconds;
+}
+
+setInterval(updateClock, 1000); //clock interval
+  
+</script>
+
+</body>
+</html>
