@@ -76,16 +76,25 @@ You must follow these steps to connect your Python app to the SQL database
 
 - **Step 1**: Add 'import pyodbc' to your imports
 - **Step 2**: Create a connection string  example:
-conn_str = (
+'conn_str = (
     "DRIVER={driver name};"
     "SERVER={server name}"
     "DATABASE={database name};"
     "UID={admin id}"
-    "PWD={your password}"
+    "PWD={your password}")'
   <br><br>
 NOTE: You can find template connection strings for your database under the overview tab of your SQL database in the Azure portal
 <br><br>
--**Step 3**:
+- **Step 3**: Add the following to open and close a connection to the database
+  ```
+  # Establish a new database connection for each request
+  conn = pyodbc.connect(conn_str)
+  cursor = conn.cursor()
+
+   # Close cursor and connection
+  cursor.close()
+  conn.close()
+  ```
   
 
 
