@@ -48,14 +48,25 @@ Now we should have created a server to host our SQL database with the proper net
       Timestamp DATETIME DEFAULT GETDATE()
   );<br><br>
 
-Now it is time to go back to our python app and connect it to the database.
+Now it is time to go back to our Python app and connect it to the database.
 <br>
 
-## Connecting Python Application to SQL Database
+## Connecting the Python Application to SQL Database
 At this point, we should have a fully function Azure server and Azure SQL database. We must now adjust our app.py file to insert the readings into the database. This process involves three main tasks: software configuration, establishing a connection to the database, and querying the database.
 <br>
 
 ### Software Configuration
+We will be using Python's 'pyodbc' package to communicate with our database. To ensure our system has the necessary drivers to access this package and communicate with our SQL database you will need to run the following commands. NOTE: depending on your system and the versions of different package's on your system the commands may vary slightly be sure to refer to the official Microsoft documentation to run the correct commands. These commands are to act as a guide for you rather than the exact commands one may need to run. The following are the ubuntu commands we used:
+
+```
+sudo apt-get update
+pip install pyodbc
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc
+curl https://packages.microsoft.com/config/debian/11/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
+sudo apt-get update
+sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18
+```
 
 
 [docs]: https://learn.microsoft.com/en-us/azure/?product=popular
