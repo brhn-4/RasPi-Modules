@@ -49,9 +49,11 @@ Now we should have created a server to host our SQL database with the proper net
   );<br><br>
 
 Now it is time to go back to our python app and connect it to the database.
+<br>
 
 ## Connecting Python Application to SQL Database
-At this point, we should have a fully function Azure server and Azure SQL database. We must now adjust our app.py file to insert the readings into the database. This process involves three main tasks: software configuration, establishing a connection to the database, and querying the database.<br>
+At this point, we should have a fully function Azure server and Azure SQL database. We must now adjust our app.py file to insert the readings into the database. This process involves three main tasks: software configuration, establishing a connection to the database, and querying the database.
+<br>
 
 ### Software Configuration
 
