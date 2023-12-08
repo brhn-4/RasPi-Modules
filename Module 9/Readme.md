@@ -74,15 +74,19 @@ sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18
 ### Connecting to the database
 You must follow these steps to connect your Python app to the SQL database
 
-- **Step 1**: add 'import pyodbc' to your imports
-- **Step 2**: create a connection string [
+- **Step 1**: Add 'import pyodbc' to your imports
+- **Step 2**: Create a connection string  example:
 conn_str = (
     "DRIVER={driver name};"
     "SERVER={server name}"
     "DATABASE={database name};"
     "UID={admin id}"
     "PWD={your password}"
-)]
+  <br><br>
+NOTE: You can find template connection strings for your database under the overview tab of your SQL database in the Azure portal
+<br><br>
+-**Step 3**:
+  
 
 
 
