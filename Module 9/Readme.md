@@ -56,7 +56,7 @@ At this point, we should have a fully function Azure server and Azure SQL databa
 <br>
 
 ### Software Configuration
-We will be using Python's 'pyodbc' package to communicate with our database. To ensure our system has the necessary drivers to access this package and communicate with our SQL database you will need to run the following commands. NOTE: depending on your system and the versions of different package's on your system the commands may vary slightly be sure to refer to the official Microsoft documentation to run the correct commands. These commands are to act as a guide for you rather than the exact commands one may need to run. The following are the ubuntu commands we used:
+We will be using Python's 'pyodbc' package to communicate with our database. To ensure our system has the necessary drivers to access this package and communicate with our SQL database you will need to run the following commands. NOTE: depending on your system and the versions of different package's on your system the commands may vary slightly be sure to refer to the official Microsoft documentation to run the correct commands. These commands are to act as a guide for you rather than the exact commands one may need to run. The following are the Ubuntu commands we used:
 
 ```
 sudo apt-get update
@@ -67,12 +67,32 @@ curl https://packages.microsoft.com/config/debian/11/prod.list | sudo tee /etc/a
 sudo apt-get update
 sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18
 ```
+<br>
+[documentation][installdocs]
+<br>
+
+### Connecting to the database
+You must follow these steps to connect your Python app to the SQL database
+
+- **Step 1**: add 'import pyodbc' to your imports
+- **Step 2**: create a connection string [
+conn_str = (
+    "DRIVER={driver name};"
+    "SERVER={server name}"
+    "DATABASE={database name};"
+    "UID={admin id}"
+    "PWD={your password}"
+)]
+
+
 
 
 [docs]: https://learn.microsoft.com/en-us/azure/?product=popular
 [tut]:https://learn.microsoft.com/en-us/azure/azure-sql/database/single-database-create-quickstart?view=azuresql&tabs=azure-portal
 [portal]:https://portal.azure.com/#home
 [connect]:https://learn.microsoft.com/en-us/azure/azure-sql/database/connectivity-settings?view=azuresql&tabs=azure-portal
+[installdocs]:https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver16&tabs=debian18-install%2Calpine17-install%2Cdebian8-install%2Credhat7-13-install%2Crhel7-offline#18
+
 
 
 
