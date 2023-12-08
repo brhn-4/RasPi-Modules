@@ -40,18 +40,26 @@ Now we should have created a server to host our SQL database with the proper net
 
 - **Step 15**: Navigate to your SQL Database
 - **Step 16**: Navigate to 'Query Editor'
-- **Step 17**: Run the following query to create the table (you can change the table name if you want):
-   CREATE TABLE SensorReadings (
+- **Step 17**: Run the following query to create the table (you can change the table name if you want) NOTE: If you ran into trouble while editing the networking/connectivity settings of the server or database you may not have access to create the table. Refer to documentation [here][connect] 
+   <br><br>CREATE TABLE SensorReadings (
       ReadingID INT IDENTITY(1,1) PRIMARY KEY,
       AirTemperature FLOAT, WaterTemperature FLOAT,
       Humidity FLOAT,
       Timestamp DATETIME DEFAULT GETDATE()
-  );
+  );<br><br>
+
+Now it is time to go back to our python app and connect it to the database.
+
+## Connecting Python Application to SQL Database
+At this point, we should have a fully function Azure server and Azure SQL database. We must now adjust our app.py file to insert the readings into the database. This process involves three main tasks: software configuration, establishing a connection to the database, and querying the database.<br>
+
+### Software Configuration
 
 
 [docs]: https://learn.microsoft.com/en-us/azure/?product=popular
 [tut]:https://learn.microsoft.com/en-us/azure/azure-sql/database/single-database-create-quickstart?view=azuresql&tabs=azure-portal
 [portal]:https://portal.azure.com/#home
+[connect]:https://learn.microsoft.com/en-us/azure/azure-sql/database/connectivity-settings?view=azuresql&tabs=azure-portal
 
 
 
