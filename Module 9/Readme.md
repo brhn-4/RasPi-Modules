@@ -15,7 +15,7 @@ Now we are going to be connecting our webserver and Python scripts to a cloud da
 Microsoft Azure is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers. It provides a range of cloud services, including those for computing, analytics, storage, and networking. Users can pick and choose from these services to develop and scale new applications, or run existing applications, in the public cloud. Azure offers solutions for all industries through a comprehensive set of compliant offerings, integrated tools, DevOps, and a marketplace for building any application.
 
 ### Azure SQL Database:
-On Microsoft Azure, we will be specifically using the SQL database. Microsoft Azure SQL Database is a fully managed relational cloud database service that provides SQL Server engine compatibility with built-in intelligence. It offers a scalable service that can handle large amounts of data and a wide range of transactional processing workloads. Azure SQL Database is designed to make managing and scaling applications easier with features like high availability, security, and recovery built into the service. It's suitable for a variety of applications, from small projects to large-scale enterprise use and will be perfect for our project.
+On Microsoft Azure, we will be specifically using the SQL database. Microsoft Azure SQL Database is a fully managed relational cloud database service that provides SQL Server engine compatibility with built-in intelligence. It offers a scalable service that can handle large amounts of data and a wide range of transactional processing workloads. Azure SQL Database is designed to make managing and scaling applications easier with features like high availability, security, and recovery built into the service. It's suitable for a variety of applications, from small projects to large-scale enterprise use, and will be perfect for our project.
 
 ### Creating the Azure Server and Database:
 
@@ -31,12 +31,22 @@ When creating your database there are many different options you can choose from
 - **Step 8**: For this database assign it a unique name and assign it to your current subscription plan, the server we just created, and the resource group we created.
 - **Step 9**: When creating the database you can choose the storage setting and workload environment you need for your specific needs. We chose developer workload and general storage.
 - **Step 10**: Now that we have created our database and server we need to edit the networking settings of our server to allow connectivity.
-- **Step 11**: Under your servers network settings you can either allow public access or set up a private endpoint to connect to the server. We chose to allow public access.
+- **Step 11**: Under your server's network settings you can either allow public access or set up a private endpoint to connect to the server. We chose to allow public access.
 - **Step 12**: To accomplish this under the networking settings -> public access, select 'selected networks' for the public access option.
-- **Step 13**: Now you must add a firewall rule with your network's ip address as the start and end ip to allow access.
+- **Step 13**: Now you must add a firewall rule with your network's IP address as the start and end IP to allow access.
 - **Step 14**: Save these settings and go back to the home of the Azure Portal
 
-Now we should have created a server to host our SQL database with the proper networking settings to allow access from our machine. If you accomplished this successfully, it is time to create the table and start to connect our python app to the database!
+Now we should have created a server to host our SQL database with the proper networking settings to allow access from our machine. If you accomplished this successfully, it is time to create the table and start to connect our Python app to the database!
+
+- **Step 15**: Navigate to your SQL Database
+- **Step 16**: Navigate to 'Query Editor'
+- **Step 17**: Run the following query to create the table (you can change the table name if you want):
+   CREATE TABLE SensorReadings (
+      ReadingID INT IDENTITY(1,1) PRIMARY KEY,
+      AirTemperature FLOAT, WaterTemperature FLOAT,
+      Humidity FLOAT,
+      Timestamp DATETIME DEFAULT GETDATE()
+  );
 
 
 [docs]: https://learn.microsoft.com/en-us/azure/?product=popular
